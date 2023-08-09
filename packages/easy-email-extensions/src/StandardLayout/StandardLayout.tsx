@@ -1,5 +1,5 @@
 import { Card, ConfigProvider, Layout } from '@arco-design/web-react';
-import { useEditorProps, useFocusIdx } from 'easy-email-editor';
+import { useEditorProps, useFocusIdx } from '@plugilo/easy-email-editor';
 import React, { useEffect } from 'react';
 import { InteractivePrompt } from '../InteractivePrompt';
 import styles from './index.module.scss';
@@ -7,8 +7,11 @@ import enUS from '@arco-design/web-react/es/locale/en-US';
 import { MergeTagBadgePrompt } from '@extensions/MergeTagBadgePrompt';
 import { EditPanel } from '../EditPanel';
 import { ConfigurationPanel } from '@extensions/ConfigurationPanel';
-import { ExtensionProps, ExtensionProvider } from '@extensions/components/Providers/ExtensionProvider';
-import { AdvancedType } from 'easy-email-core';
+import {
+  ExtensionProps,
+  ExtensionProvider,
+} from '@extensions/components/Providers/ExtensionProvider';
+import { AdvancedType } from '@plugilo/easy-email-core';
 
 const defaultCategories: ExtensionProps['categories'] = [
   {

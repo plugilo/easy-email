@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Collapse, Space } from '@arco-design/web-react';
-import { useBlock, useEditorProps } from 'easy-email-editor';
-import { isAdvancedBlock } from 'easy-email-core';
+import { useBlock, useEditorProps } from '@plugilo/easy-email-editor';
+import { isAdvancedBlock } from '@plugilo/easy-email-core';
 import { Iteration } from '../Iteration';
 import { Condition } from '../Condition';
 
@@ -58,6 +58,7 @@ export const CollapseWrapper: React.FC<CollapseWrapperProps> = props => {
       <Collapse
         onChange={onChange}
         activeKey={activeKeys}
+        bordered={false}
       >
         {props.children}
         {enabledLogic && (

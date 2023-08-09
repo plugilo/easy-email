@@ -1,10 +1,11 @@
-# Easy-email-core
+# @plugilo/easy-email-core
 
 ## Introduction
 
 This is the core easy-email library, composed by the following parts
 
 - utils
+
   - JsonToMjml
   - BlockManager
   - createCustomBlock
@@ -21,19 +22,19 @@ This is the core easy-email library, composed by the following parts
 ## Usage
 
 ```sh
-$ npm install --save easy-email-core
+$ npm install --save @plugilo/easy-email-core
 ```
 
 or
 
 ```sh
-$ yarn add easy-email-core
+$ yarn add @plugilo/easy-email-core
 ```
 
 ## transform json to mjml
 
 ```ts
-import { JsonToMjml } from 'easy-email-core';
+import { JsonToMjml } from '@plugilo/easy-email-core';
 
 const xml = JsonToMjml({
   data: json,
@@ -145,7 +146,11 @@ console.log(xml);
 ## parseReactBlockToBlockData
 
 ```tsx
-import { JsonToMjml, components, parseReactBlockToBlockData } from 'easy-email-core';
+import {
+  JsonToMjml,
+  components,
+  parseReactBlockToBlockData,
+} from '@plugilo/easy-email-core';
 
 const { Page, Section, Column, Text, Button } = components;
 
@@ -401,7 +406,7 @@ import {
   JsonToMjml,
   BasicType,
   BlockManager,
-} from 'easy-email-core';
+} from '@plugilo/easy-email-core';
 const { Section, Column, Image, Button } = components;
 
 type IMyFirstBlock = IBlockData<

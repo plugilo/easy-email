@@ -14,56 +14,131 @@ import { FontFamily } from '../../attributes/FontFamily';
 import { TextDecoration } from '../../attributes/TextDecoration';
 import { LineHeight } from '../../attributes/LineHeight';
 import { LetterSpacing } from '../../attributes/LetterSpacing';
-import { Collapse, Grid, Popover, Space, Button as ArcoButton } from '@arco-design/web-react';
-import { TextField } from '../../../../components/Form';
-import { IconFont, useEditorProps, useFocusIdx } from 'easy-email-editor';
+import {
+  Collapse,
+  Grid,
+  Popover,
+  Space,
+  Button as ArcoButton,
+  Divider as ArcoDivider,
+} from '@arco-design/web-react';
+import { ImageUploaderField, TextField } from '../../../../components/Form';
+import {
+  IconFont,
+  useBlock,
+  useEditorContext,
+  useEditorProps,
+  useFocusIdx,
+} from '@plugilo/easy-email-editor';
 import { AttributesPanelWrapper } from '../../attributes/AttributesPanelWrapper';
 import { MergeTags } from '../../attributes';
 import { useField } from 'react-final-form';
 import { ClassName } from '../../attributes/ClassName';
 import { CollapseWrapper } from '../../attributes/CollapseWrapper';
+import { Divider } from '../Divider';
+
+const icons = [
+  'https://plugilo.z6.web.core.windows.net/common/icons/plugilo/blue-16.png',
+  'https://plugilo.z6.web.core.windows.net/common/icons/plugilo/dark-16.png',
+  'https://plugilo.z6.web.core.windows.net/common/icons/plugilo/light-gray-16.png',
+  'https://plugilo.z6.web.core.windows.net/common/icons/plugilo/white-16.png',
+];
+
+export interface IconProps {
+  url?: string;
+  isActive?: boolean;
+  onClick?: () => void;
+}
+function Icon({ url, isActive, onClick }: IconProps) {
+  return (
+    <div
+      style={{
+        border: `1px solid ${isActive ? 'rgb(93, 172, 250)' : '#e5e5e5'}`,
+        borderRadius: '4px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '2rem',
+        height: '2rem',
+        backgroundColor: '#EEE',
+        cursor: onClick ? 'pointer' : 'default',
+      }}
+      onClick={onClick}
+    >
+      <img
+        src={url}
+        width={16}
+        height={16}
+      />
+    </div>
+  );
+}
 
 export function Button() {
   const { focusIdx } = useFocusIdx();
   const { input } = useField(`${focusIdx}.data.value.content`, {
     parse: v => v,
   });
-
+  const { focusBlock, setFocusBlockValue } = useBlock();
+  const { formHelpers } = useEditorContext();
   const { mergeTags } = useEditorProps();
+  const value = focusBlock?.data.value;
+
+  const handleIconChange = (url: string | null | undefined) => {
+    formHelpers.change(`${focusIdx}.data.value.iconUrl`, url);
+  };
 
   return (
     <AttributesPanelWrapper>
-      <CollapseWrapper defaultActiveKey={['-1', '0', '1', '2', '3']}>
+      <CollapseWrapper defaultActiveKey={['-1', '0', '1', '2', '3', 'icon']}>
         <Collapse.Item
           name='-1'
           header={t('Setting')}
         >
           <Space direction='vertical'>
             <TextField
-              label={(
+              label={
                 <Space>
                   <span>{t('Content')}</span>
-                  {mergeTags && (
-                    <Popover
-                      trigger='click'
-                      content={(
-                        <MergeTags
-                          value={input.value}
-                          onChange={input.onChange}
-                        />
-                      )}
-                    >
-                      <ArcoButton
-                        type='text'
-                        icon={<IconFont iconName='icon-merge-tags' />}
-                      />
-                    </Popover>
-                  )}
                 </Space>
-              )}
+              }
               name={`${focusIdx}.data.value.content`}
             />
             <Link />
+          </Space>
+        </Collapse.Item>
+
+        <Collapse.Item
+          name='icon'
+          header={t('Icon')}
+        >
+          {value?.iconUrl && (
+            <>
+              <Space>
+                <Icon url={value?.iconUrl} />
+                <ArcoButton
+                  shape='circle'
+                  size='small'
+                  onClick={() => handleIconChange(null)}
+                >
+                  <IconFont
+                    iconName='icon-remove'
+                    size={12}
+                  />
+                </ArcoButton>
+              </Space>
+              <ArcoDivider style={{ margin: '1rem 0', borderColor: '#f2f3f5' }} />
+            </>
+          )}
+          <Space wrap>
+            {icons.map(url => (
+              <Icon
+                key={url}
+                url={url}
+                onClick={() => handleIconChange(url)}
+                isActive={value?.iconUrl === url}
+              />
+            ))}
           </Space>
         </Collapse.Item>
 

@@ -24,7 +24,7 @@ export const Divider = createBlock<IDivider>({
     return t('Divider');
   },
   type: BasicType.DIVIDER,
-  create: (payload) => {
+  create: payload => {
     const defaultData: IDivider = {
       type: BasicType.DIVIDER,
       data: {
@@ -35,7 +35,7 @@ export const Divider = createBlock<IDivider>({
         'border-width': '1px',
         'border-style': 'solid',
         'border-color': '#C9CCCF',
-        padding: '10px 0px 10px 0px',
+        padding: '8px 0px 8px 0px',
       },
       children: [],
     };
@@ -43,6 +43,11 @@ export const Divider = createBlock<IDivider>({
   },
   validParentType: [BasicType.COLUMN, BasicType.HERO],
   render(params) {
-    return <BasicBlock params={params} tag="mj-divider" />;
+    return (
+      <BasicBlock
+        params={params}
+        tag='mj-divider'
+      />
+    );
   },
 });

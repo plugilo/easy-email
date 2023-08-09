@@ -25,7 +25,7 @@ export function ColorPickerContent(props: ColorPickerContentProps) {
   }, [props.value]);
 
   const presetColorList = useMemo(() => {
-    return [...presetColors.filter(item => item !== transparentColor).slice(-14)];
+    return [...presetColors.filter(item => item !== transparentColor).slice(-28)];
   }, [presetColors]);
 
   let adapterColor = color;
@@ -44,7 +44,7 @@ export function ColorPickerContent(props: ColorPickerContentProps) {
       <div style={{ padding: '0px 16px' }}>
         <Space
           wrap
-          size='mini'
+          size={8}
         >
           {presetColorList.map(item => {
             return (
@@ -53,16 +53,15 @@ export function ColorPickerContent(props: ColorPickerContentProps) {
                 onClick={() => onChange(item)}
                 key={item}
                 style={{
-                  border: '1px solid var(--color-neutral-3, rgb(229, 230, 235))',
-                  display: 'inline-block',
                   height: 20,
                   width: 20,
                   boxSizing: 'border-box',
                   padding: 4,
-                  borderRadius: 3,
+                  borderRadius: 20,
                   backgroundColor: item,
                   position: 'relative',
                   cursor: 'pointer',
+                  boxShadow: 'rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset',
                 }}
               />
             );

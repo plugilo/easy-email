@@ -43,6 +43,11 @@
   resolved "https://registry.yarnpkg.com/@arco-themes/react-easy-email-theme/-/react-easy-email-theme-0.0.3.tgz#b9cf6ad3c4aec9e1cc6f534132782f892a0403c2"
   integrity sha512-JZXavU2v7YK38KyoK3hUQ2bxpdD5JwPzjxFNftH6Dhiuv/CppK55/uWzDpQJIohcHM9BTRcYmgUA49OE2MHWqA==
 
+"@arco-themes/react-plugilo-web@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@arco-themes/react-plugilo-web/-/react-plugilo-web-0.0.6.tgz#0fb7b67413cc0b48730b2150d700e3e68780a511"
+  integrity sha512-lPR8KM9IdTYI6adUoA6siDJ8fpJ/eYDLBcozH2Y+zVErqHXXYC7IUnkruzr9EuUJrn1vuxFLadjAd/IhHeHzzw==
+
 "@babel/code-frame@^7.16.0":
   version "7.16.0"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.16.0.tgz#0dfc80309beec8411e65e706461c408b0bb9b431"

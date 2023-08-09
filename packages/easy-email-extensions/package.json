@@ -1,12 +1,12 @@
 {
-  "name": "easy-email-extensions",
+  "name": "@plugilo/easy-email-extensions",
   "license": "MIT",
   "description": "Email editor",
-  "version": "4.12.1",
+  "version": "4.15.12",
   "author": "m-Ryan",
   "repository": {
     "type": "git",
-    "url": "git@github.com:m-Ryan/easy-email.git"
+    "url": "git@github.com:plugilo/easy-email.git"
   },
   "keywords": [
     "email editor core"
@@ -93,8 +93,8 @@
     "react-use": "^17.3.1"
   },
   "peerDependencies": {
-    "easy-email-core": "^4.3.6",
-    "easy-email-editor": "^4.3.6",
+    "@plugilo/easy-email-core": "^4.11.2",
+    "@plugilo/easy-email-editor": "^4.11.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-final-form": "^6.5.7"

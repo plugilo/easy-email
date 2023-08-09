@@ -33,7 +33,7 @@ export type IButton = IBlockData<
     'text-decoration'?: string;
     'text-transform'?: string;
   },
-  { content: string }
+  { content: string; iconUrl?: string }
 >;
 
 export const Button = createBlock<IButton>({
@@ -55,9 +55,9 @@ export const Button = createBlock<IButton>({
         color: '#ffffff',
         'font-weight': 'normal',
         'border-radius': '3px',
-        padding: '10px 25px 10px 25px',
-        'inner-padding': '10px 25px 10px 25px',
-        'line-height': '120%',
+        padding: '8px 16px 8px 16px',
+        'inner-padding': '12px 24px 12px 24px',
+        'line-height': '16px',
         target: '_blank',
         'vertical-align': 'middle',
         border: 'none',
@@ -76,6 +76,18 @@ export const Button = createBlock<IButton>({
         params={params}
         tag='mj-button'
       >
+        {data.data.value.iconUrl && (
+          <img
+            src={data.data.value.iconUrl}
+            width={16}
+            height={16}
+            style={{
+              paddingRight: data.data.value.content ? '4px' : 0,
+              verticalAlign: '-2px',
+            }}
+          />
+        )}
+
         {data.data.value.content}
       </BasicBlock>
     );

@@ -32,7 +32,6 @@
   <img src="./join_discord.png" width="240">
 </a>
 
-
 ## Introduction
 
 Easy email is developed based on the [MJML](https://mjml.io/) and has very good compatibility. At the same time, it can generate code through drag-and-drop editing.
@@ -80,9 +79,9 @@ $ yarn add easy-email-core easy-email-editor easy-email-extensions react-final-f
 
 ```js
 import React from 'react';
-import { BlockManager, BasicType, AdvancedType } from 'easy-email-core';
-import { EmailEditor, EmailEditorProvider } from 'easy-email-editor';
-import { ExtensionProps, StandardLayout } from 'easy-email-extensions';
+import { BlockManager, BasicType, AdvancedType } from '@plugilo/easy-email-core';
+import { EmailEditor, EmailEditorProvider } from '@plugilo/easy-email-editor';
+import { ExtensionProps, StandardLayout } from '@plugilo/easy-email-extensions';
 import { useWindowSize } from 'react-use';
 
 import 'easy-email-editor/lib/style.css';
@@ -168,7 +167,6 @@ export default function App() {
 
 </br>
 
-
 ## Development
 
 ```sh
@@ -176,13 +174,13 @@ $ git clone git@github.com:zalify/easy-email.git
 $ cd easy-email
 
 
-$ yarn  
+$ yarn
 $ yarn install-all
 $ yarn dev
 
 ```
-`If you need some new features, we always welcome you to submit a PR.`
 
+`If you need some new features, we always welcome you to submit a PR.`
 
 ## License
 

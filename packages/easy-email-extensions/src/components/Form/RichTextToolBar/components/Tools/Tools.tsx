@@ -8,7 +8,7 @@ import {
   useEditorProps,
   useFocusBlockLayout,
   MergeTagBadge,
-} from 'easy-email-editor';
+} from '@plugilo/easy-email-editor';
 import { FontFamily } from '../FontFamily';
 import { MergeTags } from '../MergeTags';
 import { useSelectionRange } from '@extensions/AttributePanel/hooks/useSelectionRange';
@@ -122,12 +122,12 @@ export function Tools(props: ToolsProps) {
       >
         <BasicTools />
 
-        {mergeTags && (
+        {/* {mergeTags && (
           <MergeTags
             execCommand={execCommand}
             getPopupContainer={getPopoverMountNode}
           />
-        )}
+        )} */}
         <div className='easy-email-extensions-divider' />
         <div className='easy-email-extensions-divider' />
         <FontFamily

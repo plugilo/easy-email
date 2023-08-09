@@ -1,7 +1,7 @@
 import { IconEye, IconEyeInvisible } from '@arco-design/web-react/icon';
 import React, { useCallback } from 'react';
-import { Stack, TextStyle, useBlock } from 'easy-email-editor';
-import { BasicType, BlockManager } from 'easy-email-core';
+import { Stack, TextStyle, useBlock } from '@plugilo/easy-email-editor';
+import { BasicType, BlockManager } from '@plugilo/easy-email-core';
 
 export interface AttributesPanelWrapper {
   style?: React.CSSProperties;
@@ -27,7 +27,7 @@ export const AttributesPanelWrapper: React.FC<AttributesPanelWrapper> = props =>
     <div>
       <div
         style={{
-          border: '1px solid var(--color-neutral-3, rgb(229, 230, 235))',
+          // border: '1px solid var(--color-neutral-3, rgb(229, 230, 235))',
           borderBottom: 'none',
           padding: '12px 24px',
         }}

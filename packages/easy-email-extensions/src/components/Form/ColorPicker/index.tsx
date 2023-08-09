@@ -63,12 +63,12 @@ export function ColorPicker(props: ColorPickerProps) {
         title={props.label}
         trigger='click'
         className='color-picker-popup'
-        content={(
+        content={
           <ColorPickerContent
             value={adapterColor}
             onChange={onInputChange}
           />
-        )}
+        }
         getPopupContainer={getPopupContainer}
         {...props}
       >
@@ -81,7 +81,7 @@ export function ColorPicker(props: ColorPickerProps) {
               width: 32,
               boxSizing: 'border-box',
               padding: 4,
-              border: '1px solid var(--color-neutral-3, rgb(229, 230, 235))',
+              // border: '1px solid var(--color-neutral-3, rgb(229, 230, 235))',
               borderRadius: showInput ? undefined : 4,
               fontSize: 0,
               borderRight: showInput ? 'none' : undefined,
@@ -94,9 +94,8 @@ export function ColorPicker(props: ColorPickerProps) {
                 style={{
                   position: 'relative',
                   display: 'block',
-                  border: '1px solid var(--color-neutral-3, rgb(229, 230, 235))',
-
-                  borderRadius: 2,
+                  boxShadow: 'rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset',
+                  borderRadius: 50,
                   width: '100%',
                   height: '100%',
                   textAlign: 'center',
@@ -106,9 +105,10 @@ export function ColorPicker(props: ColorPickerProps) {
             ) : (
               <img
                 style={{
+                  borderRadius: 50,
                   maxWidth: '100%',
                   maxHeight: '100%',
-                  filter: 'invert(  0.78  )  drop-shadow(0 0px 0 rgb(0 0 0 / 45%))',
+                  filter: 'invert(  0.78  ) drop-shadow(0 0px 0 rgb(0 0 0 / 45%))',
                 }}
                 src={getImg('AttributePanel_02')}
               />

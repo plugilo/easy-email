@@ -1,5 +1,5 @@
 import { Modal } from '@arco-design/web-react';
-import { Stack, useBlock, useEditorProps } from 'easy-email-editor';
+import { Stack, useBlock, useEditorProps } from '@plugilo/easy-email-editor';
 import React from 'react';
 import { Form } from 'react-final-form';
 import { v4 as uuidv4 } from 'uuid';
@@ -12,17 +12,13 @@ export const AddToCollection: React.FC<{
   const { focusBlock: focusBlockData } = useBlock();
   const { onAddCollection, onUploadImage } = useEditorProps();
 
-  const onSubmit = (values: {
-    label: string;
-    helpText: string;
-    thumbnail: string;
-  }) => {
+  const onSubmit = (values: { label: string; helpText: string; thumbnail: string }) => {
     if (!values.label) return;
     const uuid = uuidv4();
     onAddCollection?.({
       label: values.label,
       helpText: values.helpText,
-      data: focusBlockData!,
+      data: focusBlockData,
       thumbnail: values.thumbnail,
       id: uuid,
     });
@@ -53,7 +49,10 @@ export const AddToCollection: React.FC<{
                 return undefined;
               }}
             />
-            <TextAreaField label={t('Description')} name='helpText' />
+            <TextAreaField
+              label={t('Description')}
+              name='helpText'
+            />
             <ImageUploaderField
               label={t('Thumbnail')}
               name={'thumbnail'}

@@ -21,7 +21,7 @@ import {
   EmailEditorProvider,
   EmailEditorProviderProps,
   IEmailTemplate,
-} from 'easy-email-editor';
+} from '@plugilo/easy-email-editor';
 
 import { Stack } from '@demo/components/Stack';
 import { pushEvent } from '@demo/utils/pushEvent';
@@ -29,20 +29,26 @@ import { FormApi } from 'final-form';
 import { UserStorage } from '@demo/utils/user-storage';
 
 import { useCollection } from './components/useCollection';
-import { AdvancedType, BasicType, IBlockData, JsonToMjml } from 'easy-email-core';
+import {
+  AdvancedType,
+  BasicType,
+  IBlockData,
+  JsonToMjml,
+} from '@plugilo/easy-email-core';
 import {
   BlockMarketManager,
   ExtensionProps,
   StandardLayout,
-} from 'easy-email-extensions';
+} from '@plugilo/easy-email-extensions';
 import { AutoSaveAndRestoreEmail } from '@demo/components/AutoSaveAndRestoreEmail';
 
 // Register external blocks
 import './components/CustomBlocks';
 
-import 'easy-email-editor/lib/style.css';
-import 'easy-email-extensions/lib/style.css';
-import blueTheme from '@arco-themes/react-easy-email-theme/css/arco.css?inline';
+import '@plugilo/easy-email-editor/lib/style.css';
+import '@plugilo/easy-email-extensions/lib/style.css';
+// import blueTheme from '@arco-themes/react-easy-email-theme/css/arco.css?inline';
+import blueTheme from '@arco-themes/react-plugilo-web/css/arco.css?inline';
 import purpleTheme from '@arco-themes/react-easy-email-theme-purple/css/arco.css?inline';
 import greenTheme from '@arco-themes/react-easy-email-theme-green/css/arco.css?inline';
 import { testMergeTags } from './testMergeTags';
@@ -50,7 +56,7 @@ import { useMergeTagsModal } from './components/useMergeTagsModal';
 
 import { useWindowSize } from 'react-use';
 import { CustomBlocksType } from './components/CustomBlocks/constants';
-import localesData from 'easy-email-localization/locales/locales.json';
+import localesData from '@plugilo/easy-email-localization/locales/locales.json';
 
 console.log(localesData);
 
@@ -182,7 +188,7 @@ export default function Editor() {
   const dispatch = useDispatch();
   const history = useHistory();
   const templateData = useAppSelector('template');
-  const [locale, setLocale] = useState('zh-Hans');
+  const [locale, setLocale] = useState('en');
   const { addCollection, removeCollection, collectionCategory } = useCollection();
 
   const { width } = useWindowSize();

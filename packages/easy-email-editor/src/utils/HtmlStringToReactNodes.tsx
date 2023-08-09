@@ -3,7 +3,7 @@ import {
   getNodeIdxFromClassName,
   getNodeTypeFromClassName,
   MERGE_TAG_CLASS_NAME,
-} from 'easy-email-core';
+} from '@plugilo/easy-email-core';
 import { camelCase } from 'lodash';
 import React from 'react';
 import { isTextBlock } from './isTextBlock';
@@ -184,6 +184,22 @@ function makeBlockNodeContentEditable(node: ChildNode) {
       editNode.setAttribute('contentEditable', 'true');
       editNode.setAttribute(DATA_CONTENT_EDITABLE_TYPE, ContentEditableType.RichText);
       editNode.setAttribute(DATA_CONTENT_EDITABLE_IDX, idx);
+      // editNode.addEventListener('paste', e => {
+      //   console.log('On paste');
+      //   // Get user's pasted data
+      //   let data =
+      //     e.clipboardData.getData('text/html') || e.clipboardData.getData('text/plain');
+
+      //   // Filter out everything except simple text and allowable HTML elements
+      //   let regex = /<(?!(\/\s*)?(a|b|i|em|s|strong|u)[>,\s])([^>])*>/g;
+      //   data = data.replace(regex, '');
+
+      //   // Insert the filtered content
+      //   document.execCommand('insertHTML', false, data);
+
+      //   // Prevent the standard paste behavior
+      //   e.preventDefault();
+      // });
     }
   } else if (isButtonBlock(type)) {
     const editNode = node.querySelector('a') || node.querySelector('p');

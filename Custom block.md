@@ -86,7 +86,7 @@ You can construct your custom block through basic blocks. For example,
 a custom button, only the background color and text can be modified
 
 ```tsx
-import { Button } from 'easy-email-editor';
+import { Button } from '@plugilo/easy-email-editor';
 
 const render = (data: ICustomButton, idx: string, context: IPage): IBlockData => {
   const attributes = data.attributes;
@@ -115,8 +115,8 @@ import {
   createCustomBlock,
   getPreviewClassName,
   AdvancedType,
-} from 'easy-email-core';
-import { MjmlToJson } from 'easy-email-extensions';
+} from '@plugilo/easy-email-core';
+import { MjmlToJson } from '@plugilo/easy-email-extensions';
 
 const { BlockRenderer } = components;
 
@@ -145,7 +145,7 @@ const render = (
 Only after registering this block, mjml-parser can convert it into basic blocks
 
 ```ts
-import { BlocksMap } from 'easy-email-editor';
+import { BlocksMap } from '@plugilo/easy-email-editor';
 
 BlocksMap.registerBlocks({ 'block-name': YourCustomBlock });
 ```
@@ -160,7 +160,12 @@ BlocksMap.registerBlocks({ 'block-name': YourCustomBlock });
 ## Dynamic rendering
 
 ```tsx
-import { IBlockData, BasicType, components, createCustomBlock } from 'easy-email-core';
+import {
+  IBlockData,
+  BasicType,
+  components,
+  createCustomBlock,
+} from '@plugilo/easy-email-core';
 
 import { CustomBlocksType } from '../constants';
 import React from 'react';

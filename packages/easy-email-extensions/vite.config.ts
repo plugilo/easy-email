@@ -14,8 +14,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@extensions': path.resolve('./src'),
-      'easy-email-core': path.resolve('../easy-email-core/lib'),
-      'easy-email-editor': path.resolve('../easy-email-editor/lib'),
+      '@plugilo/easy-email-core': path.resolve('../easy-email-core/lib'),
+      '@plugilo/easy-email-editor': path.resolve('../easy-email-editor/lib'),
     },
   },
   define: {},
@@ -41,6 +41,8 @@ export default defineConfig({
         'react-final-form',
         'easy-email-core',
         'easy-email-editor',
+        '@plugilo/easy-email-core',
+        '@plugilo/easy-email-editor',
         'uuid',
       ],
       output: {},

@@ -23,6 +23,21 @@ const defaultImagesMap = {
     'https://easy-email-m-ryan.vercel.app/images/d9795c1d-fa32-4adb-ab25-30b7cfe87936-df21314f-6f05-4550-80b3-9ab1107e8fbe.png',
   IMAGE_31:
     'https://easy-email-m-ryan.vercel.app/images/dd1584fb-cb60-42c9-80c7-5545e16130ca-226ba72b-ce9e-4948-ad0d-347381fb96c5.png',
+
+  IMAGE_SOCIAL_DEFAULT_01:
+    'https://plugilo.z6.web.core.windows.net/emails/icons/social/default/plugilo.png',
+  IMAGE_SOCIAL_DEFAULT_02:
+    'https://plugilo.z6.web.core.windows.net/emails/icons/social/default/facebook.png',
+  IMAGE_SOCIAL_DEFAULT_03:
+    'https://plugilo.z6.web.core.windows.net/emails/icons/social/default/instagram.png',
+  IMAGE_SOCIAL_DEFAULT_04:
+    'https://plugilo.z6.web.core.windows.net/emails/icons/social/default/twitter.png',
+  IMAGE_SOCIAL_DEFAULT_05:
+    'https://plugilo.z6.web.core.windows.net/emails/icons/social/default/youtube.png',
+  IMAGE_SOCIAL_DEFAULT_06:
+    'https://plugilo.z6.web.core.windows.net/emails/icons/social/default/linkedin.png',
+  IMAGE_SOCIAL_DEFAULT_07:
+    'https://plugilo.z6.web.core.windows.net/emails/icons/social/default/pinterest.png',
 };
 
 ImageManager.add(defaultImagesMap);

@@ -26,13 +26,6 @@
 
 ## Pro Version Announcement
 
-We are delighted to announce that we now have a more powerful and customizable commercial version available. If it is for internal use only, then the open-source version is sufficient. However, if your editor is a critical feature, I recommend using the commercial version.
-<a href="https://www.easyemail.pro/?utm_source=github" target="_blank">Check it out here </a>.
-
-## Free email templates for MJML and HTML.
-
-<a href="https://github.com/Easy-Email-Pro/email-templates" target="_blank">Check it out here </a>.
-
 ## Introduction
 
 Easy email is developed based on the [MJML](https://mjml.io/) and has very good compatibility. At the same time, it can generate code through drag-and-drop editing.
@@ -55,9 +48,10 @@ $ npm install --save easy-email-core easy-email-editor easy-email-extensions rea
 
 ```js
 import React from 'react';
-import { BlockManager, BasicType, AdvancedType } from 'easy-email-core';
-import { EmailEditor, EmailEditorProvider } from 'easy-email-editor';
-import { ExtensionProps, StandardLayout } from 'easy-email-extensions';
+import { BlockManager, BasicType, AdvancedType } from '@plugilo/easy-email-core';
+import { EmailEditor, EmailEditorProvider } from '@plugilo/easy-email-editor';
+import { ExtensionProps, StandardLayout } from '@plugilo/easy-email-extensions';
+import { useWindowSize } from 'react-use';
 
 import 'easy-email-editor/lib/style.css';
 import 'easy-email-extensions/lib/style.css';
@@ -116,9 +110,9 @@ $ git clone git@github.com:zalify/easy-email.git
 $ cd easy-email
 
 
-$ pnpm install
-$ pnpm run install-all
-$ pnpm run dev
+$ yarn
+$ yarn install-all
+$ yarn dev
 
 ```
 

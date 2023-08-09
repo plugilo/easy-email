@@ -50,5 +50,10 @@
     "packages/easy-email-core",
     "packages/easy-email-editor",
     "packages/easy-email-extensions"
-  ]
+  ],
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#06351A",
+    "titleBar.activeBackground": "#084B25",
+    "titleBar.activeForeground": "#EEFDF5"
+  }
 }

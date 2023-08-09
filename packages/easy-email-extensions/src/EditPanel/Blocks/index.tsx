@@ -1,6 +1,6 @@
 import { Collapse, Grid, Space, Typography } from '@arco-design/web-react';
-import { AdvancedType, BlockManager, IBlockData } from 'easy-email-core';
-import { BlockAvatarWrapper, IconFont } from 'easy-email-editor';
+import { AdvancedType, BlockManager, IBlockData } from '@plugilo/easy-email-core';
+import { BlockAvatarWrapper, IconFont } from '@plugilo/easy-email-editor';
 import React, { useMemo, useState } from 'react';
 import { IconCaretRight, IconCaretUp } from '@arco-design/web-react/icon';
 import { getIconNameByBlockType } from '@extensions/utils/getIconNameByBlockType';
@@ -11,15 +11,14 @@ export function Blocks() {
   const { categories } = useExtensionProps();
 
   const defaultActiveKey = useMemo(
-    () => [
-      ...categories.filter((item) => item.active).map((item) => item.label),
-    ],
-    [categories]
+    () => [...categories.filter(item => item.active).map(item => item.label)],
+    [categories],
   );
   return (
     <Collapse
       defaultActiveKey={defaultActiveKey}
       style={{ paddingBottom: 30, minHeight: '100%' }}
+      bordered={false}
     >
       {categories.map((cat, index) => {
         if (cat.displayType === 'column') {
@@ -33,7 +32,7 @@ export function Blocks() {
               <Space direction='vertical'>
                 <div />
               </Space>
-              {cat.blocks.map((item) => (
+              {cat.blocks.map(item => (
                 <LayoutItem
                   key={item.title}
                   title={item.title || ''}
@@ -73,7 +72,12 @@ export function Blocks() {
           >
             <Grid.Row>
               {cat.blocks.map((item, index) => {
-                return <BlockItem key={index} {...(item as any)} />;
+                return (
+                  <BlockItem
+                    key={index}
+                    {...(item as any)}
+                  />
+                );
               })}
             </Grid.Row>
           </Collapse.Item>
@@ -98,7 +102,10 @@ function BlockItem({
 
   return (
     <div className={styles.blockItem}>
-      <BlockAvatarWrapper type={type} payload={payload}>
+      <BlockAvatarWrapper
+        type={type}
+        payload={payload}
+      >
         <div className={styles.blockItemContainer}>
           <IconFont
             style={{ fontSize: 20 }}
@@ -113,19 +120,13 @@ function BlockItem({
   );
 }
 
-function LayoutItem({
-  columns,
-  title,
-}: {
-  columns: string[][];
-  title: string;
-}) {
+function LayoutItem({ columns, title }: { columns: string[][]; title: string }) {
   const [visible, setVisible] = useState(false);
 
   return (
     <div>
       <p
-        onClick={() => setVisible((v) => !v)}
+        onClick={() => setVisible(v => !v)}
         style={{
           display: 'flex',
           justifyContent: 'space-between',
@@ -141,17 +142,37 @@ function LayoutItem({
         const hide = !visible && index !== 0;
         const payload = {
           type: AdvancedType.SECTION,
-          attributes: {},
-          children: item.map((col) => ({
-            type: AdvancedType.COLUMN,
-            attributes: {
-              width: col,
+          attributes: {
+            padding: '0 12px 0 12px',
+          },
+          data: {
+            value: {
+              noWrap: false,
             },
-            data: {
-              value: {},
+          },
+          children: [
+            {
+              type: AdvancedType.GROUP,
+              data: {
+                value: {},
+              },
+              attributes: {
+                'vertical-align': 'top',
+                direction: 'ltr',
+              },
+              children: item.map(col => ({
+                type: AdvancedType.COLUMN,
+                attributes: {
+                  width: col,
+                  padding: '12px 12px 12px 12px',
+                },
+                data: {
+                  value: {},
+                },
+                children: [],
+              })),
             },
-            children: [],
-          })),
+          ],
         };
 
         return (
@@ -163,7 +184,10 @@ function LayoutItem({
               marginBottom: hide ? 0 : 20,
             }}
           >
-            <BlockAvatarWrapper type={AdvancedType.SECTION} payload={payload}>
+            <BlockAvatarWrapper
+              type={AdvancedType.SECTION}
+              payload={payload}
+            >
               <div
                 style={{
                   border: '1px solid rgb(229, 229, 229)',

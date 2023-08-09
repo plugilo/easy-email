@@ -42,7 +42,7 @@ export const Text = createBlock<IText>({
         },
       },
       attributes: {
-        padding: '10px 25px 10px 25px',
+        padding: '8px 16px 8px 16px',
         align: 'left',
       },
       children: [],

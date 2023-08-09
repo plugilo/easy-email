@@ -1,5 +1,5 @@
 import { EmailTemplate } from '@prisma/client';
-import { IEmailTemplate } from 'easy-email-editor';
+import { IEmailTemplate } from '@plugilo/easy-email-editor';
 import { useCallback, useEffect, useState } from 'react';
 import { api } from './api';
 

@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { AdvancedType } from 'easy-email-core';
+import { AdvancedType } from '@plugilo/easy-email-core';
 import {
   EmailEditor,
   EmailEditorProvider,
   IEmailTemplate,
   Stack,
-} from 'easy-email-editor';
-import { ExtensionProps, StandardLayout } from 'easy-email-extensions';
+} from '@plugilo/easy-email-editor';
+import { ExtensionProps, StandardLayout } from '@plugilo/easy-email-extensions';
 import { Button, Message, PageHeader } from '@arco-design/web-react';
 import 'easy-email-editor/lib/style.css';
 import 'easy-email-extensions/lib/style.css';

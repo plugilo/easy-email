@@ -24,14 +24,14 @@ export const Wrapper = createBlock<IWrapper>({
     return t('Wrapper');
   },
   type: BasicType.WRAPPER,
-  create: (payload) => {
+  create: payload => {
     const defaultData: IWrapper = {
       type: BasicType.WRAPPER,
       data: {
         value: {},
       },
       attributes: {
-        padding: '20px 0px 20px 0px',
+        padding: '16px 0px 16px 0px',
         border: 'none',
         direction: 'ltr',
         'text-align': 'center',
@@ -42,6 +42,11 @@ export const Wrapper = createBlock<IWrapper>({
   },
   validParentType: [BasicType.PAGE],
   render(params) {
-    return <BasicBlock params={params} tag="mj-wrapper" />;
+    return (
+      <BasicBlock
+        params={params}
+        tag='mj-wrapper'
+      />
+    );
   },
 });

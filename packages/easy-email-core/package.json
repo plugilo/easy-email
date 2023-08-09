@@ -1,12 +1,12 @@
 {
-  "name": "easy-email-core",
+  "name": "@plugilo/easy-email-core",
   "license": "MIT",
   "description": "Email editor",
-  "version": "4.16.1",
-  "author": "m-Ryan",
+  "version": "5.0.0",
+  "author": "plugilo dev",
   "repository": {
     "type": "git",
-    "url": "git@github.com:zalify/easy-email.git"
+    "url": "git+ssh://git@github.com/plugilo/easy-email.git"
   },
   "keywords": [
     "email editor core"
@@ -81,5 +81,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "gitHead": "f6cf54160ffdba0d4d6b23483293dd9190d2d2c2"
+  "bugs": {
+    "url": "https://github.com/plugilo/easy-email/issues"
+  },
+  "homepage": "https://github.com/plugilo/easy-email#readme"
 }

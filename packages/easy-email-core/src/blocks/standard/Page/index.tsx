@@ -57,13 +57,13 @@ export const Page = createBlock<IPage>({
           fonts: [],
           responsive: true,
           'font-family':
-            '-apple-system, BlinkMacSystemFont, \'Segoe UI\', \'Roboto\', \'Oxygen\', \'Ubuntu\', \'Cantarell\', \'Fira Sans\', \'Droid Sans\',\'Helvetica Neue\', sans-serif',
+            "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
           'text-color': '#000000',
         },
       },
       attributes: {
         'background-color': '#efeeea',
-        width: '600px',
+        width: '676px',
       },
       children: [Wrapper.create()],
     };
@@ -84,7 +84,7 @@ export const Page = createBlock<IPage>({
             <meta name="viewport" />
            </mj-raw>
            <mj-style inline="inline">.mjml-body { width: ${
-             data.attributes.width || '600px'
+             data.attributes.width || '676px'
            }; margin: 0px auto; }</mj-style>`
       : '';
     const styles =
@@ -103,6 +103,66 @@ export const Page = createBlock<IPage>({
         }</mj-style>`
       : '';
 
+    const defaultStyle = `<mj-style>
+      @media only screen and (max-width: ${data.data.value.breakpoint}) {
+        .pl-tmpl-section--wrap .pl-tmpl-col {
+          width: 100% !important;
+        }
+      }
+
+      img {
+        white-space: pre-line;
+      }
+      </mj-style>`;
+
+    const defaultScript = `<mj-raw>
+    <!-- DCI SCRIPT START --><script type="text/javascript">
+          (function () {
+            function addToOnLoad(func) {
+              var preOnload = window.onload;
+              if (typeof window.onload != "function") {
+                window.onload = func;
+              } else {
+                window.onload = function () {
+                  if (preOnload) {
+                    preOnload();
+                  }
+                  func();
+                };
+              }
+            }
+
+            addToOnLoad(function () {
+              if (ResizeObserver) {
+                const resizeObserver = new ResizeObserver((entries) => {
+                  const styles = window.getComputedStyle(document.body);
+                  const width = Math.ceil(
+                    document.body.offsetWidth +
+                      parseFloat(styles["marginTop"]) +
+                      parseFloat(styles["marginBottom"])
+                  );
+                  const height = Math.ceil(
+                    document.body.offsetHeight +
+                      parseFloat(styles["marginLeft"]) +
+                      parseFloat(styles["marginRight"])
+                  );
+
+                  window.parent.postMessage(
+                    {
+                      action: "PLUGILO_WEBPAGE_RESIZE",
+                      width,
+                      height,
+                    },
+                    "*"
+                  );
+                });
+                resizeObserver.observe(document.body);
+              }
+            });
+          })();
+        </script>
+      </mj-raw><!-- DCI SCRIPT END -->`;
+
     const extraHeadContent = value.extraHeadContent
       ? `<mj-raw>${value.extraHeadContent}</mj-raw>`
       : '';
@@ -116,6 +176,8 @@ export const Page = createBlock<IPage>({
               ${nonResponsive}
               ${styles}
               ${userStyle}
+              ${defaultStyle}
+              ${defaultScript}
               ${breakpoint}
               ${extraHeadContent}
               ${value.fonts

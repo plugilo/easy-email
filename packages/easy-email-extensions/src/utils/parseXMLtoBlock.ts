@@ -1,5 +1,5 @@
 import mjml from 'mjml-browser';
-import { IBlockData, BlockType, BasicType, BlockManager } from 'easy-email-core';
+import { IBlockData, BlockType, BasicType, BlockManager } from '@plugilo/easy-email-core';
 import { MjmlToJson } from './MjmlToJson';
 
 const domParser = new DOMParser();
@@ -22,7 +22,7 @@ export function parseXMLtoBlock(text: string) {
       throw new Error('Invalid content');
     }
     const attributes: IBlockData['attributes'] = {};
-    node.getAttributeNames().forEach((name) => {
+    node.getAttributeNames().forEach(name => {
       attributes[name] = node.getAttribute(name);
     });
     const type = node.tagName.replace('mj-', '');
@@ -41,7 +41,7 @@ export function parseXMLtoBlock(text: string) {
         },
       },
       children: [...node.children]
-        .filter((item) => item instanceof Element)
+        .filter(item => item instanceof Element)
         .map(transform as any),
     };
 

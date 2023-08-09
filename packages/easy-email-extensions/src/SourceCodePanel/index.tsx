@@ -6,13 +6,13 @@ import {
   getParentByIdx,
   IBlockData,
   JsonToMjml,
-} from 'easy-email-core';
+} from '@plugilo/easy-email-core';
 import {
   useBlock,
   useFocusIdx,
   useEditorContext,
   useEditorProps,
-} from 'easy-email-editor';
+} from '@plugilo/easy-email-editor';
 import { cloneDeep } from 'lodash';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { MjmlToJson } from '@extensions/utils/MjmlToJson';
@@ -105,7 +105,7 @@ export function SourceCodePanel({ jsonReadOnly, mjmlReadOnly }: { jsonReadOnly: 
   if (!focusBlock) return null;
 
   return (
-    <Collapse>
+    <Collapse bordered={false}>
       <Collapse.Item
         name='json'
         header={t('Json source')}

@@ -1,20 +1,33 @@
 import React, { useCallback, useMemo, useRef } from 'react';
 import { useLocalStorage } from 'react-use';
 import { debounce } from 'lodash';
-import { useRefState } from 'easy-email-editor';
+import { useRefState } from '@plugilo/easy-email-editor';
 
 const defaultPresetColor: string[] = [
+  '#f44336',
+  '#e91e63',
+  '#9c27b0',
+  '#673ab7',
+  '#3f51b5',
+  '#2196f3',
+  '#03a9f4',
+  '#00bcd4',
+  '#009688',
+  '#4caf50',
+  '#8bc34a',
+  '#cddc39',
+  '#ffeb3b',
+  '#ffc107',
+  '#ff9800',
+  '#ff5722',
+  '#795548',
   '#000000',
+  '#4A4A4A',
+  '#9B9B9B',
   '#FFFFFF',
-  '#9b9b9b',
-  '#d0021b',
-  '#4a90e2',
-  '#7ed321',
-  '#bd10e0',
-  '#f8e71c',
 ];
 
-const CURRENT_COLORS_KEY = 'CURRENT_COLORS_KEY';
+const CURRENT_COLORS_KEY = 'EMAIL_CURRENT_COLORS_KEY';
 const MAX_RECORD_SIZE = 20;
 
 export const PresetColorsContext = React.createContext<{

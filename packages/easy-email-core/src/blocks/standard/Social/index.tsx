@@ -61,7 +61,7 @@ export const Social: IBlock<ISocial> = createBlock({
     return t('Social');
   },
   type: BasicType.SOCIAL,
-  create: (payload) => {
+  create: payload => {
     const defaultData: ISocial = {
       type: BasicType.SOCIAL,
       data: {
@@ -70,20 +70,44 @@ export const Social: IBlock<ISocial> = createBlock({
             {
               href: '#',
               target: '_blank',
-              src: getImg('IMAGE_02'),
-              content: 'Facebook',
+              src: getImg('IMAGE_SOCIAL_DEFAULT_01'),
+              content: '',
             },
             {
               href: '#',
               target: '_blank',
-              src: getImg('IMAGE_03'),
-              content: 'Google',
+              src: getImg('IMAGE_SOCIAL_DEFAULT_02'),
+              content: '',
             },
             {
               href: '',
               target: '_blank',
-              src: getImg('IMAGE_04'),
-              content: 'Twitter',
+              src: getImg('IMAGE_SOCIAL_DEFAULT_03'),
+              content: '',
+            },
+            {
+              href: '',
+              target: '_blank',
+              src: getImg('IMAGE_SOCIAL_DEFAULT_04'),
+              content: '',
+            },
+            {
+              href: '',
+              target: '_blank',
+              src: getImg('IMAGE_SOCIAL_DEFAULT_05'),
+              content: '',
+            },
+            {
+              href: '',
+              target: '_blank',
+              src: getImg('IMAGE_SOCIAL_DEFAULT_06'),
+              content: '',
+            },
+            {
+              href: '',
+              target: '_blank',
+              src: getImg('IMAGE_SOCIAL_DEFAULT_07'),
+              content: '',
             },
           ],
         },
@@ -95,7 +119,7 @@ export const Social: IBlock<ISocial> = createBlock({
         'font-size': '13px',
         'font-weight': 'normal',
         'border-radius': '3px',
-        padding: '10px 25px 10px 25px',
+        padding: '8px 16px 8px 16px',
         'inner-padding': '4px 4px 4px 4px',
         'line-height': '22px',
         'text-padding': '4px 4px 4px 0px',
@@ -109,18 +133,24 @@ export const Social: IBlock<ISocial> = createBlock({
   validParentType: [BasicType.COLUMN],
   render(params) {
     const { data } = params;
-    const elements = (data ).data.value.elements
-      .map((element) => {
+    const elements = data.data.value.elements
+      .map(element => {
         const elementAttributeStr = Object.keys(element)
-          .filter((key) => key !== 'content' && element[key as keyof typeof element] !== '') // filter att=""
-          .map((key) => `${key}="${element[key as keyof typeof element]}"`)
+          .filter(key => key !== 'content' && element[key as keyof typeof element] !== '') // filter att=""
+          .map(key => `${key}="${element[key as keyof typeof element]}"`)
           .join(' ');
         return `
           <mj-social-element ${elementAttributeStr}>${element.content ?? ''}</mj-social-element>
           `;
       })
       .join('\n');
-    return <BasicBlock params={params} tag="mj-social">{elements}</BasicBlock>;
-
+    return (
+      <BasicBlock
+        params={params}
+        tag='mj-social'
+      >
+        {elements}
+      </BasicBlock>
+    );
   },
 });

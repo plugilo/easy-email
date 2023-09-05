@@ -116,7 +116,7 @@ export const Page = createBlock<IPage>({
       </mj-style>`;
 
     const defaultScript = `<mj-raw>
-    <!-- DCI SCRIPT START --><script type="text/javascript">
+    <!-- DCI EMAIL SCRIPT START --><script type="text/javascript">
           (function () {
             function addToOnLoad(func) {
               var preOnload = window.onload;
@@ -161,7 +161,7 @@ export const Page = createBlock<IPage>({
             });
           })();
         </script>
-      </mj-raw><!-- DCI SCRIPT END -->`;
+      </mj-raw><!-- DCI EMAIL SCRIPT END -->`;
 
     const extraHeadContent = value.extraHeadContent
       ? `<mj-raw>${value.extraHeadContent}</mj-raw>`

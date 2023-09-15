@@ -68,13 +68,13 @@ export const Social: IBlock<ISocial> = createBlock({
         value: {
           elements: [
             {
-              href: '#',
+              href: 'https://plugilo.de/stacks/61839b705920250021cf08fd/plugilo?inac=follow',
               target: '_blank',
               src: getImg('IMAGE_SOCIAL_DEFAULT_01'),
               content: '',
             },
             {
-              href: '#',
+              href: 'https://www.facebook.com/plugilo/?locale=de_DE',
               target: '_blank',
               src: getImg('IMAGE_SOCIAL_DEFAULT_02'),
               content: '',
@@ -92,13 +92,13 @@ export const Social: IBlock<ISocial> = createBlock({
               content: '',
             },
             {
-              href: '',
+              href: 'https://www.youtube.com/@plugilo-channel',
               target: '_blank',
               src: getImg('IMAGE_SOCIAL_DEFAULT_05'),
               content: '',
             },
             {
-              href: '',
+              href: 'https://www.linkedin.com/company/7575797',
               target: '_blank',
               src: getImg('IMAGE_SOCIAL_DEFAULT_06'),
               content: '',

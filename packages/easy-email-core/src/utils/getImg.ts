@@ -21,8 +21,7 @@ const defaultImagesMap = {
     'https://easy-email-m-ryan.vercel.app/images/9cce6b16-5a98-4ddb-b1a1-6cec2cf56891-c3acb856-8ab8-4cfb-93f9-2a0747678b8b.png',
   IMAGE_17:
     'https://easy-email-m-ryan.vercel.app/images/d9795c1d-fa32-4adb-ab25-30b7cfe87936-df21314f-6f05-4550-80b3-9ab1107e8fbe.png',
-  IMAGE_31:
-    'https://easy-email-m-ryan.vercel.app/images/dd1584fb-cb60-42c9-80c7-5545e16130ca-226ba72b-ce9e-4948-ad0d-347381fb96c5.png',
+  IMAGE_31: 'https://plugilo.z6.web.core.windows.net/email_builder/default/hero.png',
 
   IMAGE_SOCIAL_DEFAULT_01:
     'https://plugilo.z6.web.core.windows.net/emails/icons/social/default/plugilo.png',

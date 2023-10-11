@@ -1,8 +1,7 @@
 import { ImageManager } from '@plugilo/easy-email-core';
 
 const defaultImagesMap = {
-  IMAGE_59:
-    'https://easy-email-m-ryan.vercel.app/images/06ca521d-9728-4de6-a709-1b75a828bfc3-2a9b1224-3d71-43b8-b52f-e7cdcdc9107b.png',
+  IMAGE_59: 'https://plugilo.z6.web.core.windows.net/email_builder/default/image.png',
   AttributePanel_01:
     'https://easy-email-m-ryan.vercel.app/images/e22f78f2-aa76-408d-ba94-c95c7abe1908-image.png',
   AttributePanel_02:

@@ -95,7 +95,7 @@ export const Hero = createBlock<IHero>({
           },
           attributes: {
             align: 'center',
-            'background-color': '#f3a333',
+            'background-color': '#333940',
             color: '#ffffff',
             'font-size': '13px',
             'font-weight': 'normal',

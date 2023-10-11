@@ -47,8 +47,7 @@ const defaultImagesMap = {
     'https://easy-email-m-ryan.vercel.app/images/af34a548-c339-4a9e-85fe-11bf90c083eb-46fef91d-7307-4e91-aae0-460da1c48629.png',
   IMAGE_30:
     'https://easy-email-m-ryan.vercel.app/images/84014a93-429c-479c-b9ed-0c568f58a288-ca76cdf2-92d3-4552-bc95-3a8dd4c9cd0b.png',
-  IMAGE_31:
-    'https://easy-email-m-ryan.vercel.app/images/dd1584fb-cb60-42c9-80c7-5545e16130ca-226ba72b-ce9e-4948-ad0d-347381fb96c5.png',
+  IMAGE_31: 'https://plugilo.z6.web.core.windows.net/email_builder/default/hero.png',
   IMAGE_32:
     'https://easy-email-m-ryan.vercel.app/images/76e3d8e2-697d-484c-a989-715bd234b575-37bde239-2e2d-450a-8e93-d62c39cb94a3.png',
   IMAGE_33:
@@ -103,8 +102,7 @@ const defaultImagesMap = {
     'https://easy-email-m-ryan.vercel.app/images/425c6017-2c30-41d7-8930-08300492c6d4-a0859ca3-5213-484c-9170-2d51329407cc.png',
   IMAGE_58:
     'https://easy-email-m-ryan.vercel.app/images/858ea699-cf65-469d-bd9e-70adea729bb4-c4e7a711-27b6-4865-9b32-516c41cebddf.png',
-  IMAGE_59:
-    'https://easy-email-m-ryan.vercel.app/images/06ca521d-9728-4de6-a709-1b75a828bfc3-2a9b1224-3d71-43b8-b52f-e7cdcdc9107b.png',
+  IMAGE_59: 'https://plugilo.z6.web.core.windows.net/email_builder/default/image.png',
   IMAGE_60:
     'https://easy-email-m-ryan.vercel.app/images/199eacfa-daf8-4dd1-a356-225a265a88a4-e8432435-a2bb-4ec2-a3e9-ee1757d8b44b.png',
   IMAGE_61:

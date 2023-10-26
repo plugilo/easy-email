@@ -15,7 +15,7 @@ export function Link() {
   return useMemo(() => {
     return (
       <Grid.Row>
-        <Grid.Col span={11}>
+        <Grid.Col span={24}>
           <TextField
             prefix={<IconLink />}
             label={(
@@ -40,7 +40,7 @@ export function Link() {
             name={`${focusIdx}.attributes.href`}
           />
         </Grid.Col>
-        <Grid.Col
+        {/* <Grid.Col
           offset={1}
           span={11}
         >
@@ -58,7 +58,7 @@ export function Link() {
               },
             ]}
           />
-        </Grid.Col>
+        </Grid.Col> */}
       </Grid.Row>
     );
   }, [focusIdx]);

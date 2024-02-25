@@ -143,7 +143,7 @@ function LayoutItem({ columns, title }: { columns: string[][]; title: string }) 
         const payload = {
           type: AdvancedType.SECTION,
           attributes: {
-            padding: '0 12px 0 12px',
+            padding: '0 16px 0 16px',
           },
           data: {
             value: {
@@ -164,7 +164,7 @@ function LayoutItem({ columns, title }: { columns: string[][]; title: string }) 
                 type: AdvancedType.COLUMN,
                 attributes: {
                   width: col,
-                  padding: '12px 12px 12px 12px',
+                  padding: '16px 16px 16px 16px',
                 },
                 data: {
                   value: {},

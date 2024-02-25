@@ -1,4 +1,5 @@
 import React from 'react';
+import { useForm } from 'react-final-form';
 import {
   ColorPickerField,
   InputWithUnitField,
@@ -7,7 +8,7 @@ import {
   TextField,
 } from '@extensions/components/Form';
 import { AddFont } from '@extensions/components/Form/AddFont';
-import { Collapse, Grid, Space } from '@arco-design/web-react';
+import { Button, Collapse, Grid, Space } from '@arco-design/web-react';
 import { Stack, useFocusIdx } from '@plugilo/easy-email-editor';
 import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
 import { FontFamily } from '../../attributes/FontFamily';
@@ -19,8 +20,13 @@ interface PageProps {
 }
 export function Page({ hideSubTitle, hideSubject }: PageProps) {
   const { focusIdx } = useFocusIdx();
+  const { change } = useForm();
 
   if (!focusIdx) return null;
+
+  const handleChangeWidth = (newWidth: any) => {
+    change(`${focusIdx}.attributes.width`, newWidth);
+  };
 
   return (
     <AttributesPanelWrapper style={{ padding: 0 }}>
@@ -53,6 +59,33 @@ export function Page({ hideSubTitle, hideSubject }: PageProps) {
                 name={`${focusIdx}.attributes.width`}
                 inline
               />
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'end',
+                }}
+              >
+                <Stack spacing='tight'>
+                  <Button
+                    size='small'
+                    onClick={() => handleChangeWidth('652px')}
+                  >
+                    652px
+                  </Button>
+                  <Button
+                    size='small'
+                    onClick={() => handleChangeWidth('676px')}
+                  >
+                    676px
+                  </Button>
+                  <Button
+                    size='small'
+                    onClick={() => handleChangeWidth('700px')}
+                  >
+                    700px
+                  </Button>
+                </Stack>
+              </div>
               <InputWithUnitField
                 label={t('Breakpoint')}
                 helpText={t(

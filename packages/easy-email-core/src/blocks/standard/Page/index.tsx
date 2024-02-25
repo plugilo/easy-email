@@ -63,7 +63,7 @@ export const Page = createBlock<IPage>({
       },
       attributes: {
         'background-color': '#efeeea',
-        width: '676px',
+        width: '700px',
       },
       children: [Wrapper.create()],
     };
@@ -84,7 +84,7 @@ export const Page = createBlock<IPage>({
             <meta name="viewport" />
            </mj-raw>
            <mj-style inline="inline">.mjml-body { width: ${
-             data.attributes.width || '676px'
+             data.attributes.width || '700px'
            }; margin: 0px auto; }</mj-style>`
       : '';
     const styles =

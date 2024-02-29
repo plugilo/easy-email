@@ -56,7 +56,6 @@ export function Image() {
             <ColorPickerField
               label={t('Background color')}
               name={`${focusIdx}.attributes.container-background-color`}
-              inline
             />
             <SwitchField
               label={t('Full width on mobile')}

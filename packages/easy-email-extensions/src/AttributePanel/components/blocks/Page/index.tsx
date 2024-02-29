@@ -44,20 +44,17 @@ export function Page({ hideSubTitle, hideSubject }: PageProps) {
                 <TextField
                   label={t('Subject')}
                   name={'subject'}
-                  inline
                 />
               )}
               {!hideSubTitle && (
                 <TextField
                   label={t('SubTitle')}
                   name={'subTitle'}
-                  inline
                 />
               )}
               <InputWithUnitField
                 label={t('Width')}
                 name={`${focusIdx}.attributes.width`}
-                inline
               />
               <div
                 style={{
@@ -92,7 +89,6 @@ export function Page({ hideSubTitle, hideSubject }: PageProps) {
                   'Allows you to control on which breakpoint the layout should go desktop/mobile.',
                 )}
                 name={`${focusIdx}.data.value.breakpoint`}
-                inline
               />
             </Space>
           </Collapse.Item>

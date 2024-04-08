@@ -109,6 +109,18 @@ export const Social: IBlock<ISocial> = createBlock({
               src: getImg('IMAGE_SOCIAL_DEFAULT_07'),
               content: '',
             },
+            {
+              href: '',
+              target: '_blank',
+              src: getImg('IMAGE_SOCIAL_DEFAULT_08'),
+              content: '',
+            },
+            {
+              href: '',
+              target: '_blank',
+              src: getImg('IMAGE_SOCIAL_DEFAULT_09'),
+              content: '',
+            },
           ],
         },
       },

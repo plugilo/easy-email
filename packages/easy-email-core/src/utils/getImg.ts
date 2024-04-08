@@ -37,6 +37,10 @@ const defaultImagesMap = {
     'https://plugilo.z6.web.core.windows.net/emails/icons/social/default/linkedin.png',
   IMAGE_SOCIAL_DEFAULT_07:
     'https://plugilo.z6.web.core.windows.net/emails/icons/social/default/pinterest.png',
+  IMAGE_SOCIAL_DEFAULT_08:
+    'https://plugilo.z6.web.core.windows.net/emails/icons/social/default/tiktok.png',
+  IMAGE_SOCIAL_DEFAULT_09:
+    'https://plugilo.z6.web.core.windows.net/emails/icons/social/default/xing.png',
 };
 
 ImageManager.add(defaultImagesMap);

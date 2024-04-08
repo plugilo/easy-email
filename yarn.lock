@@ -3287,6 +3287,11 @@ minizlib@^2.0.0, minizlib@^2.1.1:
     minipass "^3.0.0"
     yallist "^4.0.0"
 
+mjml-browser@^4.15.3:
+  version "4.15.3"
+  resolved "https://registry.yarnpkg.com/mjml-browser/-/mjml-browser-4.15.3.tgz#16e129d65bb1fe911b096a300cd60b20d46ac407"
+  integrity sha512-HS3YFo6mfle+TLnaRzUbDa9COwkm860lAuHXD5e7qxi90AVhGdAnG1KAVrriEfQSuYcAZbhZjZtp6GhvXi6XcA==
+
 mkdirp-infer-owner@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/mkdirp-infer-owner/-/mkdirp-infer-owner-2.0.0.tgz"

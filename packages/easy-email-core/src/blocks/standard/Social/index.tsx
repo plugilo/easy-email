@@ -109,6 +109,18 @@ export const Social: IBlock<ISocial> = createBlock({
               src: getImg('IMAGE_SOCIAL_DEFAULT_07'),
               content: '',
             },
+            {
+              href: '',
+              target: '_blank',
+              src: getImg('IMAGE_SOCIAL_DEFAULT_08'),
+              content: '',
+            },
+            {
+              href: '',
+              target: '_blank',
+              src: getImg('IMAGE_SOCIAL_DEFAULT_09'),
+              content: '',
+            },
           ],
         },
       },
@@ -140,7 +152,9 @@ export const Social: IBlock<ISocial> = createBlock({
           .map(key => `${key}="${element[key as keyof typeof element]}"`)
           .join(' ');
         return `
-        <mj-social-element ${elementAttributeStr}>${element.content != null ? element.content : '' }</mj-social-element>
+        <mj-social-element ${elementAttributeStr}>${
+          element.content != null ? element.content : ''
+        }</mj-social-element>
           `;
       })
       .join('\n');

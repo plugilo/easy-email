@@ -116,7 +116,7 @@ export const Page = createBlock<IPage>({
       </mj-style>`;
 
     const defaultScript = `<mj-raw>
-    <!-- DCI EMAIL SCRIPT START --><script type="text/javascript">
+      <!-- DCI EMAIL SCRIPT START --><script type="text/javascript">
           (function () {
             function addToOnLoad(func) {
               var preOnload = window.onload;
@@ -158,6 +158,29 @@ export const Page = createBlock<IPage>({
                 });
                 resizeObserver.observe(document.body);
               }
+            });
+          })();
+
+          (function() {
+            window.addEventListener("click", function(event) {
+                var target = event.target.closest('a');
+                if (target.tagName === "A" && target.getAttribute("href").startsWith("#")) {
+                    event.preventDefault();
+                    var href = target.getAttribute("href");
+                    var targetId = href.substring(1);
+                    var targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        var rect = targetElement.getBoundingClientRect();
+                        window.parent.postMessage({
+                            action: "PLUGILO_WEBPAGE_ANCHOR_CLICK",
+                            targetId: targetId,
+                            rect: rect,
+                        }, "*");
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
             });
           })();
         </script>

@@ -4,7 +4,7 @@
     "install-all": "lerna exec -- yarn --force && cd demo && yarn --force",
     "vercel-install": "lerna exec -- yarn install --network-concurrency 1 && cd demo && yarn install --network-concurrency 1",
     "build": "yarn build:core && yarn build:editor && yarn build:extensions",
-    "publish:all": "yarn publish:core && yarn publish:editor && yarn publish:extensions",
+    "publish": "npm run publish:core && npm run publish:editor && npm run publish:extensions",
     "build:core": "cd packages/easy-email-core && yarn build",
     "build:editor": "cd packages/easy-email-editor && yarn build",
     "build:extensions": "cd packages/easy-email-extensions && yarn build",

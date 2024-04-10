@@ -164,7 +164,7 @@ export const Page = createBlock<IPage>({
           (function() {
             window.addEventListener("click", function(event) {
                 var target = event.target.closest('a');
-                if (target.tagName === "A" && target.getAttribute("href").startsWith("#")) {
+                if (target && target.tagName === "A" && target.getAttribute("href").startsWith("#")) {
                     event.preventDefault();
                     var href = target.getAttribute("href");
                     var targetId = href.substring(1);

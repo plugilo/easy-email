@@ -8,6 +8,7 @@ import { useField } from 'react-final-form';
 
 export function Link() {
   const { focusIdx } = useFocusIdx();
+  const a = 1;
   const { input } = useField(`${focusIdx}.attributes.href`, {
     parse: v => v,
   });

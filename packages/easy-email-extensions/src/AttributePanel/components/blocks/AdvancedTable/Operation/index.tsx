@@ -39,9 +39,11 @@ export function TableOperation() {
     }
   }, [focusIdx, focusBlock]);
 
+  // return null;
+
   return (
     <>
-      {shadowRoot &&
+      {shadowRoot && shadowRoot.querySelector('body') &&
         createPortal(
           <>
             <div>

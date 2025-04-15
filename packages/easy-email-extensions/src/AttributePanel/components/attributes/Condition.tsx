@@ -117,7 +117,7 @@ export function Condition() {
 
   if (
     !focusBlock?.type ||
-    !Object.values(AdvancedType).includes(focusBlock?.type as any)
+    !Object.values(AdvancedType).includes(focusBlock?.type )
   ) {
     return null;
   }
@@ -133,14 +133,14 @@ export function Condition() {
       destroyOnHide
       name='Condition'
       header={t('Condition')}
-      extra={
+      extra={(
         <div style={{ marginRight: 10 }}>
           <Switch
             checked={condition?.enabled}
             onChange={onConditionToggle}
           />
         </div>
-      }
+      )}
     >
       {condition?.enabled && (
         <Space
@@ -148,7 +148,7 @@ export function Condition() {
           size='large'
         >
           <List
-            header={
+            header={(
               <Grid.Row justify='space-between'>
                 <Grid.Col span={16}>
                   {condition.groups.length > 1 && (
@@ -177,7 +177,7 @@ export function Condition() {
                   icon={<IconPlus />}
                 />
               </Grid.Row>
-            }
+            )}
             dataSource={condition.groups}
             render={(group, gIndex) => {
               return (
@@ -260,14 +260,12 @@ function ConditionItem({
   return (
     <Grid.Row align='end'>
       <Grid.Col span={7}>
-        {' '}
         <TextField
           label={t('Variable path')}
           name={`${name}.left`}
         />
       </Grid.Col>
       <Grid.Col span={7}>
-        {' '}
         <SelectField
           label={t('Operator')}
           name={`${name}.operator`}
@@ -275,7 +273,6 @@ function ConditionItem({
         />
       </Grid.Col>
       <Grid.Col span={7}>
-        {' '}
         {!hideRight && (
           <TextField
             label='Right'

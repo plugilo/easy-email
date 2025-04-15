@@ -90,7 +90,7 @@ export function ContextMenu({
             <IconFont
               iconName='icon-top'
               style={{ marginRight: 10 }}
-            />{' '}
+            />
             <TextStyle>{t('Move up')}</TextStyle>
           </div>
         )}
@@ -101,7 +101,7 @@ export function ContextMenu({
           <IconFont
             iconName='icon-bottom'
             style={{ marginRight: 10 }}
-          />{' '}
+          />
           <TextStyle>{t('Move down')}</TextStyle>
         </div>
         <div
@@ -111,7 +111,7 @@ export function ContextMenu({
           <IconFont
             iconName='icon-copy'
             style={{ marginRight: 10 }}
-          />{' '}
+          />
           <TextStyle>{t('Copy')}</TextStyle>
         </div>
         {props.onAddCollection && (
@@ -122,7 +122,7 @@ export function ContextMenu({
             <IconFont
               iconName='icon-start'
               style={{ marginRight: 10 }}
-            />{' '}
+            />
             <TextStyle>Add to collection</TextStyle>
           </div>
         )}
@@ -133,7 +133,7 @@ export function ContextMenu({
           <IconFont
             iconName='icon-delete'
             style={{ marginRight: 10 }}
-          />{' '}
+          />
           <TextStyle>{t('Delete')}</TextStyle>
         </div>
       </div>
